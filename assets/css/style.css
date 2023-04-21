@@ -242,3 +242,8 @@ nav.nav-w {
     display: none;
   }
 }
+
+
+#popup {
+  display: none;
+}

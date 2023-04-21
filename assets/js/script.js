@@ -70,6 +70,16 @@ btn.on("click", function (e) {
 // copyright year
 document.getElementById("cp-year").innerHTML = new Date().getFullYear()
 
+
+// popup test
+const popupBtn = document.getElementById('popup-btn');
+const popupSection = document.getElementById('popup');
+
+popupBtn.addEventListener('click', () => {
+  popupSection.style.display = 'block';
+});
+
+
 /**
   * @INFO
   * Website Coded by Vivoxi#8069
