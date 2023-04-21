@@ -79,6 +79,11 @@ popupBtn.addEventListener('click', () => {
   popupSection.style.display = 'block';
 });
 
+const closeBtn = document.getElementById('close-btn');
+
+closeBtn.addEventListener('click', () => {
+  popupSection.style.display = 'none';
+});
 
 /**
   * @INFO

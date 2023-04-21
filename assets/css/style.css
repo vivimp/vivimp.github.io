@@ -244,6 +244,32 @@ nav.nav-w {
 }
 
 
+
+
 #popup {
   display: none;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(5, 5, 5, 0.98);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#popup p {
+  margin: 0 0 20px;
+}
+
+#close-btn {
+  margin-top: 20px;
+}
+
+.rounded {
+  border-radius: 25px;
+  padding: 10px 20px;
 }
