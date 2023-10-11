@@ -73,17 +73,55 @@ document.getElementById("cp-year").innerHTML = new Date().getFullYear()
 
 // popup test
 const popupBtn = document.getElementById('popup-btn');
-const popupSection = document.getElementById('popup');
+const popupContainer = document.getElementById('popup-container');
+const closeBtn = document.getElementById('close-btn');
+const overlay = document.getElementById('overlay');
+const body = document.body;
 
 popupBtn.addEventListener('click', () => {
-  popupSection.style.display = 'block';
+    popupContainer.style.display = 'block';
+    overlay.style.display = 'block';
+    body.style.overflow = 'hidden'; // Prevent scrolling
 });
-
-const closeBtn = document.getElementById('close-btn');
 
 closeBtn.addEventListener('click', () => {
-  popupSection.style.display = 'none';
+    closePopup();
 });
+
+overlay.addEventListener('click', () => {
+    closePopup();
+});
+
+function closePopup() {
+    popupContainer.style.display = 'none';
+    overlay.style.display = 'none';
+    body.style.overflow = 'auto'; // Allow scrolling
+}
+
+
+/*const popupBtn = document.getElementById('popup-btn');
+const popupContainer = document.getElementById('popup-container');
+const closeBtn = document.getElementById('close-btn');
+const overlay = document.getElementById('overlay');
+
+popupBtn.addEventListener('click', () => {
+    popupContainer.style.display = 'block';
+    overlay.style.display = 'block';
+    overlay.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    popupContainer.style.display = 'none';
+    overlay.style.display = 'none';
+    overlay.classList.remove('active');
+});
+
+overlay.addEventListener('click', () => {
+    popupContainer.style.display = 'none';
+    overlay.style.display = 'none';
+    overlay.classList.remove('active');
+});*/
+
 
 /**
   * @INFO
