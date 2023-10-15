@@ -71,7 +71,8 @@ btn.on("click", function (e) {
 document.getElementById("cp-year").innerHTML = new Date().getFullYear()
 
 
-// popup test
+// popup dziala
+/*
 const popupBtn = document.getElementById('popup-btn');
 const popupContainer = document.getElementById('popup-container');
 const closeBtn = document.getElementById('close-btn');
@@ -99,28 +100,45 @@ function closePopup() {
 }
 
 
-/*const popupBtn = document.getElementById('popup-btn');
+*/
+// test 
+
+const urlParams = new URLSearchParams(window.location.search);
+const isOpen = urlParams.get('popup');
+
+if (isOpen === 'true') {
+  const popupContainer = document.getElementById('popup-container');
+  const overlay = document.getElementById('overlay');
+  const body = document.body;
+  popupContainer.style.display = 'block';
+  overlay.style.display = 'block';
+  body.style.overflow = 'hidden'; // Prevent scrolling
+}
+
+const popupBtn = document.getElementById('popup-btn');
 const popupContainer = document.getElementById('popup-container');
 const closeBtn = document.getElementById('close-btn');
 const overlay = document.getElementById('overlay');
 
 popupBtn.addEventListener('click', () => {
-    popupContainer.style.display = 'block';
-    overlay.style.display = 'block';
-    overlay.classList.add('active');
+  popupContainer.style.display = 'block';
+  overlay.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
 });
 
 closeBtn.addEventListener('click', () => {
-    popupContainer.style.display = 'none';
-    overlay.style.display = 'none';
-    overlay.classList.remove('active');
+  closePopup();
 });
 
 overlay.addEventListener('click', () => {
-    popupContainer.style.display = 'none';
-    overlay.style.display = 'none';
-    overlay.classList.remove('active');
-});*/
+  closePopup();
+});
+
+function closePopup() {
+  popupContainer.style.display = 'none';
+  overlay.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Allow scrolling
+}
 
 
 /**
