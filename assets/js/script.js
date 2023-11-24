@@ -105,7 +105,7 @@ function closePopup() {
 
 const urlParams = new URLSearchParams(window.location.search);
 const isOpen = urlParams.get('popup');
-
+console.log(urlParams)
 if (isOpen === 'true') {
   const popupContainer = document.getElementById('popup-container');
   const overlay = document.getElementById('overlay');
